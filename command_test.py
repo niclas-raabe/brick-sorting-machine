@@ -125,15 +125,21 @@ def stop():
     stopAllMotors()
     cap.release()
 
+def exit():
+    logging.debug('You pressed Ctrl+C!')
+    stopAllMotors()
+    sys.exit(0)
 
 t = threading.Thread(target=run)
 t.start()
 
 
 def signal_handler(sig, frame):
-    logging.debug('You pressed Ctrl+C!')
-    stopAllMotors()
-    sys.exit(0)
+    exit()
 
 
 signal.signal(signal.SIGINT, signal_handler)
+
+if sys.platform == "win32":
+    import win32api
+    win32api.SetConsoleCtrlHandler(exit, True)
