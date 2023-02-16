@@ -137,5 +137,3 @@ def signal_handler(sig, frame):
 
 
 signal.signal(signal.SIGINT, signal_handler)
-logging.debug('Press Ctrl+C')
-signal.pause()
