@@ -74,7 +74,7 @@ def stopMotorsForPartCheck():
 
 
 def startMotorsAfterPartCheck():
-    motor3.start_move()
+    motor3.start_move(direction=-1)
 
     # wait until the part left the belt
     sleep(5)
