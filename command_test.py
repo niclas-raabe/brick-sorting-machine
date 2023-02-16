@@ -68,6 +68,7 @@ def checkIncomingPart():
 
 
 def stopMotorsForPartCheck():
+    sleep(1)
     motor2.stop()
     motor3.stop()
     motor4.stop()
