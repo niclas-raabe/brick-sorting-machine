@@ -125,7 +125,7 @@ def stop():
     stopAllMotors()
     cap.release()
 
-def exit():
+def exit(sig):
     logging.debug('You pressed Ctrl+C!')
     stopAllMotors()
     sys.exit(0)
@@ -135,7 +135,7 @@ t.start()
 
 
 def signal_handler(sig, frame):
-    exit()
+    exit(sig)
 
 
 signal.signal(signal.SIGINT, signal_handler)
