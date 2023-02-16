@@ -31,7 +31,7 @@ motor3.speed = 20
 
 def startAllMotors():
     motor2.start_move(direction=-1)
-    motor3.start_move()
+    motor3.start_move(direction=-1)
     motor4.start_move(direction=-1)
 
 
